@@ -46,5 +46,25 @@ Route::group(['middleware' => ['web']], function (){
         'uses' => 'AddCategory@doAddCategory',
         'as' => 'addcategory'
     ]);
+
+    Route::get('/viewcategory', [
+        'uses' => 'ViewCategory@showViewCategory',
+        'as' => 'viewcategory'
+    ]);
+
+    Route::get('/editcategory/{id}/', [
+        'uses' => 'EditCategory@showEditCategory',
+        'as' => 'editcategory'
+    ]);
+
+    Route::post('/editcategory/{id}/', [
+        'uses' => 'EditCategory@doEditCategory',
+        'as' => 'editcategory'
+    ]);
+
+    Route::get('/deletecategory/{id}/', [
+        'uses' => 'DeleteCategory@doDeleteCategory',
+        'as' => 'deletecategory'
+    ]);
     
 });
