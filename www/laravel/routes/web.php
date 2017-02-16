@@ -12,8 +12,18 @@
 */
 
 Route::group(['middleware' => ['web']], function (){
-    Route::get('/index', function (){
+    Route::get('/', function (){
         return view('index');
     })->name('index');
+
+    Route::get('/adminregister', [
+        'uses' => 'AdminRegister@showAdminRegister',
+        'as' => 'adminregister'
+    ]);
+
+    Route::post('/adminregister', [
+        'uses' => 'AdminRegister@doAdminRegister',
+        'as' => 'adminregister'
+    ]);
     
 });
