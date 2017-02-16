@@ -56,7 +56,7 @@
           <input type="hidden" value="{{ Session::token() }}" name="_token">
   		</form>
 
-  		<h4 class="jumpto">Have an account? <a href="#">login</a></h4>
+  		<h4 class="jumpto">Have an account? <a href="{{ route('adminlogin') }}">login</a></h4>
     </div>
 
 

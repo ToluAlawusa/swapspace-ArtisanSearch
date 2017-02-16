@@ -25,5 +25,15 @@ Route::group(['middleware' => ['web']], function (){
         'uses' => 'AdminRegister@doAdminRegister',
         'as' => 'adminregister'
     ]);
+
+    Route::get('/adminlogin', [
+        'uses' => 'AdminLogin@showAdminLogin',
+        'as' => 'adminlogin'
+    ]);
+
+     Route::post('/adminlogin', [
+        'uses' => 'AdminLogin@doAdminLogin',
+        'as' => 'adminlogin'
+    ]);
     
 });
