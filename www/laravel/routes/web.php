@@ -35,5 +35,16 @@ Route::group(['middleware' => ['web']], function (){
         'uses' => 'AdminLogin@doAdminLogin',
         'as' => 'adminlogin'
     ]);
+
+    Route::get('/addcategory', [
+        'uses' => 'AddCategory@showAddCategory',
+        'as' => 'addcategory'
+    ]);
+
+    
+    Route::post('/addcategory', [
+        'uses' => 'AddCategory@doAddCategory',
+        'as' => 'addcategory'
+    ]);
     
 });

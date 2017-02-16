@@ -26,6 +26,6 @@ class AdminLogin extends Controller
             	return redirect()->back()->with(['fail' => 'email or password incorrect']);
             }
 
-            return redirect()->route('index');
+            return redirect()->route('addcategory');
     }
 }
