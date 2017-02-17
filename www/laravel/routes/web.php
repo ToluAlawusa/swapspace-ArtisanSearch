@@ -66,5 +66,31 @@ Route::group(['middleware' => ['web']], function (){
         'uses' => 'DeleteCategory@doDeleteCategory',
         'as' => 'deletecategory'
     ]);
+
+    Route::get('/admindashboard', [
+        'uses' => 'AdminDashboard@showDashboard',
+        'as' => 'admindashboard'
+    ]);
+
+    Route::get('/previewstatement/{id}/', [
+	    'uses' => 'PreviewStatement@showPreviewStatement',
+	    'as' => 'previewstatement'
+    ]);
+
+    Route::post('/previewstatement/{id}/', [
+        'uses' => 'PreviewStatement@doPublishStatement',
+        'as' => 'previewstatement'
+    ]);
+
+    Route::get('/deletestatement/{id}/', [
+        'uses' => 'DeleteStatement@doDeleteStatement',
+        'as' => 'deletestatement'
+    ]);
+
+
+	Route::get('/adminlogout', [
+	    'uses' => 'AdminLogout@doAdminLogout',
+	    'as' => 'adminlogout'
+	]);
     
 });
